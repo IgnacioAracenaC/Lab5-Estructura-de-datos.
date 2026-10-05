@@ -52,7 +52,7 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight) {
     addNode(g,src);
     addNode(g, dest);
     List *listaAristas = (List *) map_search(g->adjacencyMap, (void*)src);
-    if(!edgesList) return;
+    if(!listaAristas) return;
 
     Edge *nuevaArista = (Edge*)malloc(sizeof(Edge));
     if(!nuevaArista) return;

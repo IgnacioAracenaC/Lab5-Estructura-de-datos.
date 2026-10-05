@@ -190,3 +190,17 @@ graph.c:54:11: error: unused variable ‘listaAristas’ [-Werror=unused-variabl
       |           ^~~~~~~~~~~~
 cc1: all warnings being treated as errors
 7fc6706
+Mon Oct  5 01:16:53 AM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:63:19: error: ‘edgesList’ undeclared (first use in this function)
+   63 |     list_pushBack(edgesList, newEdge);
+      |                   ^~~~~~~~~
+graph.c:63:19: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:63:30: error: ‘newEdge’ undeclared (first use in this function)
+   63 |     list_pushBack(edgesList, newEdge);
+      |                              ^~~~~~~
+48a1cf8
