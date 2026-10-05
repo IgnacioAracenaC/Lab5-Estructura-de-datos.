@@ -10,3 +10,61 @@ Mon Oct  5 12:15:46 AM UTC 2026:
  tests:  0|6
 ========================================
 797604a
+Mon Oct  5 01:10:25 AM UTC 2026: 
+ graph.c | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:31:19: error: invalid initializer
+   31 |     Graph grafo = (Graph *)malloc(sizeof(Graph));
+      |                   ^
+graph.c:32:14: error: invalid operands to binary == (have ‘Graph’ and ‘void *’)
+   32 |     if(grafo == NULL){
+      |              ^~
+graph.c:35:10: error: invalid type argument of ‘->’ (have ‘Graph’)
+   35 |     grafo->vertices = list_create();
+      |          ^~
+graph.c:36:10: error: invalid type argument of ‘->’ (have ‘Graph’)
+   36 |     grafo->adjacencyMap = map_create(is_equal_string);
+      |          ^~
+graph.c:37:12: error: incompatible types when returning type ‘Graph’ but ‘Graph *’ was expected
+   37 |     return grafo;
+      |            ^~~~~
+graph.c: In function ‘addNode’:
+graph.c:44:22: error: ‘Graph’ has no member named ‘vetices’; did you mean ‘vertices’?
+   44 |     list_pushBack(g->vetices, nombreNodo);
+      |                      ^~~~~~~
+      |                      vertices
+graph.c:47:57: error: expected ‘;’ before ‘}’ token
+   47 |     map_insert(g->adjacencyMap, nombreNodo, listaArista)
+      |                                                         ^
+      |                                                         ;
+   48 | }
+      | ~                                                        
+graph.c: In function ‘addEdge’:
+graph.c:55:1: error: expected identifier or ‘(’ before ‘}’ token
+   55 | }
+      | ^
+test.c:279:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  279 | int main(int argc, char *argv[]) {
+      |     ^~~~
+test.c:303:1: error: expected declaration or statement at end of input
+  303 | }
+      | ^
+test.c:15:6: error: unused variable ‘msg’ [-Werror=unused-variable]
+   15 | char msg[500];
+      |      ^~~
+graph.c: In function ‘createGraph’:
+graph.c:38:1: error: control reaches end of non-void function [-Werror=return-type]
+   38 | }
+      | ^
+test.c: At top level:
+test.c:279:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  279 | int main(int argc, char *argv[]) {
+      |     ^~~~
+graph.c:71:7: error: ‘getAdjacentLabels’ defined but not used [-Werror=unused-function]
+   71 | List* getAdjacentLabels(Graph* g, const char* label) {
+      |       ^~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+1307ecb

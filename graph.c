@@ -14,6 +14,7 @@
 
 struct Graph {
     // Un solo mapa basta: Llave (char* label) -> Valor (List* de Edge*)
+    List *vertices;
     Map* adjacencyMap; 
 };
 
@@ -27,17 +28,30 @@ int is_equal_string(void *key1, void *key2) {
  * ========================================= */
 
 Graph* createGraph() {
-    return NULL;
+    Graph grafo = (Graph *)malloc(sizeof(Graph));
+    if(grafo == NULL){
+        return NULL;
+    }
+    grafo->vertices = list_create();
+    grafo->adjacencyMap = map_create(is_equal_string);
+    return grafo;
 }
 
 void addNode(Graph* g, const char* label) {
     if (!g || !label) return;
+    if(map_search(g->adjacencyMap, (void*)label) != NULL) return;
+    char *nombreNodo = strdup(label);
+    list_pushBack(g->vetices, nombreNodo);
 
+    List *listaArista = list_create();
+    map_insert(g->adjacencyMap, nombreNodo, listaArista)
 }
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) {
     if (!g || !src || !dest) return;
-
+    addNode(g,src);
+    addNode(g, dest);
+    List 
 }
 
 List* getEdges(Graph* g, const char* label) {
