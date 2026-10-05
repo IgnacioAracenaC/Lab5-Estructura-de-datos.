@@ -214,3 +214,15 @@ Mon Oct  5 01:23:59 AM UTC 2026:
  1 file changed, 1 insertion(+), 2 deletions(-)
  tests:  0|0
 a4bcae4
+Mon Oct  5 01:37:52 AM UTC 2026: 
+ graph.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:74:37: error: ‘label’ undeclared (first use in this function); did you mean ‘label2’?
+   74 |     List *listaAristas = getEdges(g,label);
+      |                                     ^~~~~
+      |                                     label2
+graph.c:74:37: note: each undeclared identifier is reported only once for each function it appears in
+99dc4df
