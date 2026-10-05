@@ -243,3 +243,14 @@ Mon Oct  5 01:47:22 AM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 985c2c1
+Mon Oct  5 01:55:25 AM UTC 2026: 
+ graph.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getEdges’:
+graph.c:76:16: error: expected ‘;’ before ‘)’ token
+   76 |     return NULL);
+      |                ^
+graph.c:76:16: error: expected statement before ‘)’ token
+88e8bbe
