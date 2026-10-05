@@ -49,9 +49,7 @@ void addNode(Graph* g, const char* label) {
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) {
     if (!g || !src || !dest) return;
-    addNode(g,src);
-    addNode(g, dest);
-    List 
+    
 }
 
 List* getEdges(Graph* g, const char* label) {
