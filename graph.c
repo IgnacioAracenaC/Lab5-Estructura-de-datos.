@@ -44,7 +44,7 @@ void addNode(Graph* g, const char* label) {
     list_pushBack(g->vertices, nombreNodo);
 
     List *listaArista = list_create();
-    map_insert(g->adjacencyMap, nombreNodo, listaArista)
+    map_insert(g->adjacencyMap, nombreNodo, listaArista);
 }
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) {
