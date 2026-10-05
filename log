@@ -106,3 +106,37 @@ graph.c:71:7: error: ‘getAdjacentLabels’ defined but not used [-Werror=unuse
       |       ^~~~~~~~~~~~~~~~~
 cc1: all warnings being treated as errors
 ef249f4
+Mon Oct  5 01:11:45 AM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addNode’:
+graph.c:47:57: error: expected ‘;’ before ‘}’ token
+   47 |     map_insert(g->adjacencyMap, nombreNodo, listaArista)
+      |                                                         ^
+      |                                                         ;
+   48 | }
+      | ~                                                        
+graph.c: In function ‘addEdge’:
+graph.c:55:1: error: expected identifier or ‘(’ before ‘}’ token
+   55 | }
+      | ^
+test.c:279:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  279 | int main(int argc, char *argv[]) {
+      |     ^~~~
+test.c:303:1: error: expected declaration or statement at end of input
+  303 | }
+      | ^
+test.c:15:6: error: unused variable ‘msg’ [-Werror=unused-variable]
+   15 | char msg[500];
+      |      ^~~
+test.c: At top level:
+test.c:279:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  279 | int main(int argc, char *argv[]) {
+      |     ^~~~
+graph.c:71:7: error: ‘getAdjacentLabels’ defined but not used [-Werror=unused-function]
+   71 | List* getAdjacentLabels(Graph* g, const char* label) {
+      |       ^~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+75b35a7

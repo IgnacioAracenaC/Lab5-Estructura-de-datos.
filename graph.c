@@ -41,7 +41,7 @@ void addNode(Graph* g, const char* label) {
     if (!g || !label) return;
     if(map_search(g->adjacencyMap, (void*)label) != NULL) return;
     char *nombreNodo = strdup(label);
-    list_pushBack(g->vetices, nombreNodo);
+    list_pushBack(g->vertices, nombreNodo);
 
     List *listaArista = list_create();
     map_insert(g->adjacencyMap, nombreNodo, listaArista)
