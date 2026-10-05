@@ -226,3 +226,15 @@ graph.c:74:37: error: ‘label’ undeclared (first use in this function); did y
       |                                     label2
 graph.c:74:37: note: each undeclared identifier is reported only once for each function it appears in
 99dc4df
+Mon Oct  5 01:46:28 AM UTC 2026: 
+ graph.c | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:74:37: error: ‘label’ undeclared (first use in this function); did you mean ‘label2’?
+   74 |     List *listaAristas = getEdges(g,label);
+      |                                     ^~~~~
+      |                                     label2
+graph.c:74:37: note: each undeclared identifier is reported only once for each function it appears in
+62a133f

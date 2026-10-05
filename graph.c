@@ -51,7 +51,7 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight) {
     if (!g || !src || !dest) return;
     addNode(g,src);
     addNode(g, dest);
-    List *listaAristas = (List *) map_search(g->adjacencyMap, (void*)src);
+    List *listaAristas = getEdges(g, src);
     if(!listaAristas) return;
 
     Edge *nuevaArista = (Edge*)malloc(sizeof(Edge));
@@ -87,9 +87,19 @@ int getWeight(Graph* g, const char* label1, const char* label2) {
 // Retorna una nueva List* que contiene elementos de tipo char* (las etiquetas)
 List* getAdjacentLabels(Graph* g, const char* label) {
     if (!g || !label) return NULL;
+    List *listaAristas = getEdges(g, label);
+    if(!listaAristas) return NULL;
+    List *etiquetaAdyacente = list_create();
+    if(!etiquetaAdyacente)return NULL;
 
-
-    return NULL; 
+    Edge *elemento = (Edge*)list_first(listaAristas);
+    while(elemento != NULL){
+        if(elemento->target != NULL){
+            list_pushBack(etiquetaAdyacente, elemento->target);
+        }
+        elemento = (Edge*)list_next(listaAristas);
+    }
+    return etiquetaAdyacente; 
 }
 
 void destroyGraph(Graph* g) {
