@@ -43,12 +43,24 @@ void addNode(Graph* g, const char* label) {
     char *nombreNodo = strdup(label);
     list_pushBack(g->vertices, nombreNodo);
 
-    List *listaArista = list_create();
-    map_insert(g->adjacencyMap, nombreNodo, listaArista);
+    List *listaAristas = list_create();
+    map_insert(g->adjacencyMap, nombreNodo, listaAristas);
 }
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) {
     if (!g || !src || !dest) return;
+    addNode(g,src);
+    addNode(g, dest);
+    List *listaAristas = (List *) map_search(g->adjacencyMap, (void*)src);
+    if(!edgesList) return;
+
+    Edge *nuevaArista = (Edge*)malloc(sizeof(Edge));
+    if(!nuevaArista) return;
+
+    nuevaArista->target = strdup(dest);
+    nuevaArista->weight = weight;
+
+    list_pushBack(edgesList, newEdge);
     
 }
 
