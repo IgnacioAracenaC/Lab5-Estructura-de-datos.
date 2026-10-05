@@ -73,7 +73,7 @@ List* getEdges(Graph* g, const char* label) {
         }
         pair = map_next(g->adjacencyMap);
     }
-    return NULL);
+    return NULL;
 }
 
 int getWeight(Graph* g, const char* label1, const char* label2) {
